@@ -20,9 +20,6 @@ while True:
     # verbose=False prevents the console from being flooded with output for each frame
     results = model.predict(frame, verbose=False)
 
-    # The 'results' object contains bounding boxes, classes, and confidence levels
-    # You can process these results here (e.g., draw custom annotations using OpenCV functions)
-    # The 'plot()' method from the results object can draw the detections on the frame automatically
     annotated_frame = results[0].plot()
 
     # Display the annotated frame
@@ -32,6 +29,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Release the webcam and close all windows
 cap.release()
 cv2.destroyAllWindows()
