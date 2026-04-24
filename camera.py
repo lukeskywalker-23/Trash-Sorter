@@ -1,5 +1,10 @@
 import cv2
 from ultralytics import YOLO
+import serial
+import time 
+
+ser = serial.Serial('COM3', 9600, timeout=1)  # need to Replace 'COM3' with Arduino's port
+time.sleep(2)  # Wait for the serial connection to initialize
 
 # Load model
 model = YOLO(r"\Users\000000070\Downloads\best.pt")
